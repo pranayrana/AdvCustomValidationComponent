@@ -1,0 +1,4 @@
+.has-error .form-control{
+    border-width: 1px;
+    border-color: pink !important;
+ }
