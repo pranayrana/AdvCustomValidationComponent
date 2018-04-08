@@ -19,18 +19,17 @@ export class CustomInputComponent implements OnInit {
     return this.input.hasError;
   }
 
-  get errorMessage() {
+  get errorMessages() {
     const errors = this.input.errors;
-    let error = '';
+    const messages = [];
     const keys = Object.keys(this.validations);
 
-    keys.some(key => {
+    keys.forEach(key => {
         if (errors[key]) {
-          error = this.validations[key];
-          return true;
+          messages.push(this.validations[key]);
         }
       });
-    return error;
+    return messages;
   }
 
   ngOnInit() { }

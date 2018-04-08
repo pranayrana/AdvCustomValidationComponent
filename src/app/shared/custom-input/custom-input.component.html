@@ -3,6 +3,8 @@
   <br />
   <div [ngClass]="{'has-error':isError}" >
     <ng-content></ng-content>
-    <span class="text-danger" *ngIf="errorMessage"> {{errorMessage}}</span>
+    <ng-container *ngIf='isError'>
+      <span class="text-danger" *ngFor="let msg of errorMessages"> {{msg}}</span>
+    </ng-container>
   </div>
 </div>
